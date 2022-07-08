@@ -60,3 +60,28 @@ function average(a,b){
 function sqrt(x){
   return square_root(1,x);
 }
+
+
+
+// We need to find cube root
+function cubeRoot(number){
+  // We need to find the cuberoot of num
+  // How do we find cube root? We start with an initial guess and check if cube is bigger than the supplied number?
+  // If it is it isnt the cube root other wise we eill check again with a larger approximation
+  // The laret approximation wins
+  const check = (guess,number) => Math.abs(guess**3-number)<0.001;
+  
+  // Write the cylce to guess
+  // function checkCycle(guess,number){
+  //   return check(guess,number)?guess:checkCycle(newGuess(guess),number);
+  // }
+
+  // Write a function to find the new guess
+  const newGuess = (guess,number) => ((number/(guess*guess))+(2*guess))/3;
+  
+  const checkCycle = (guess,number) => check(guess,number)?guess:checkCycle(newGuess(guess,number),number);
+  
+  return Math.floor(checkCycle(1,number)+0.5);//Flooring and returning the number
+}
+
+console.log(cubeRoot(27));
