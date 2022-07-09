@@ -84,4 +84,50 @@ function cubeRoot(number){
   return Math.floor(checkCycle(1,number)+0.5);//Flooring and returning the number
 }
 
-console.log(cubeRoot(27));
+// console.log(cubeRoot(27));
+
+
+
+// function factorial(n){
+//   return n>0?n*factorial(n-1):1;
+// }
+let factorial = n => n>0?n*factorial(n-1):1;
+
+// console.log(factorial(3));
+// In this particular implementation it doesn't matter if we do ++counter or counter++ but it might in some cases
+// I don't know?! I guess It doesn't funcking matter
+let factorialTwo = (n,counter=1,product=1) => counter<=n?factorial(n,++counter,counter * product):product;
+
+// console.log(factorialTwo(4));
+
+
+// Adding two numbers
+let inc = x => x+1;
+let dec = x => x-1;
+
+// Below is a recursive function
+let plus = (a,b) => a===0?b:inc(plus(dec(a),b));
+// Let's write the iterative version
+let plusIter = (a,b) => a==0?b:plus(dec(a),inc(b));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
