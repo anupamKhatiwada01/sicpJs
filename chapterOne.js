@@ -118,12 +118,14 @@ let A = (x,y) => y==0?0:x==0?2*y:y===1?2:A(x-1,A(x,y-1));
 // On the other hand space required grows only linearly with input because we need to keep track of only the nodes above us in the tree at any point in the computation. In general, the number of steps in a tree recursive process will be proportiional
 // to the number of nodes in the tree while the space required will be proportional to the maximum depth of the tree.
 
-let fiboRecursive = n => n<2?n:fiboRecursive(n-1)+fiboRecursive(n-2);
+// let fiboRecursive = n => n<2?n:fiboRecursive(n-1)+fiboRecursive(n-2);
 
-let fiboIter = (n,counter=0,sum=0) => n<2?sum:fiboIter(--n, counter++, sum+counter);
+// let fiboIter = (n,counter=0,sum=0) => n<2?sum:fiboIter(--n, counter++, sum+counter);
 // Both the above two implementations of fibonacci are wrong. Go through them and correct them.
-console.log(fiboIter(3));
-console.log(fiboRecursive(5));
+// console.log(fiboIter(3));
+// console.log(fiboRecursive(5));
+
+
 
 
 
