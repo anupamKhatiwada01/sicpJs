@@ -118,12 +118,29 @@ let A = (x,y) => y==0?0:x==0?2*y:y===1?2:A(x-1,A(x,y-1));
 // On the other hand space required grows only linearly with input because we need to keep track of only the nodes above us in the tree at any point in the computation. In general, the number of steps in a tree recursive process will be proportiional
 // to the number of nodes in the tree while the space required will be proportional to the maximum depth of the tree.
 
-// let fiboRecursive = n => n<2?n:fiboRecursive(n-1)+fiboRecursive(n-2);
+const fibo = (n)=> n===0 || n<0?0:n===1?1:fibo(n-1)+fibo(n-2);
+// console.log(fibo(2));
+// console.log(fibo(3));
+// console.log(fibo(5));
 
-// let fiboIter = (n,counter=0,sum=0) => n<2?sum:fiboIter(--n, counter++, sum+counter);
-// Both the above two implementations of fibonacci are wrong. Go through them and correct them.
-// console.log(fiboIter(3));
-// console.log(fiboRecursive(5));
+// The iterative fibo is great
+const iterFibo = (n)=>{
+
+  const runner = (a,b,c) => c===0?b:runner(a+b,a,c-1);
+
+  return runner(1,0,n);
+}
+
+
+console.log(iterFibo(2));
+console.log(iterFibo(3));
+console.log(iterFibo(5));
+
+
+// This is fucking insane!!
+// iterFibo is big o n and fibo is big o 2^n 
+
+
 
 
 
